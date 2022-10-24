@@ -10,7 +10,7 @@ import { PostagemService } from "./services/postagem.service";
 @Module({
     imports: [TypeOrmModule.forFeature([Postagem]), TemaModule],
     providers: [PostagemService, TemaService],
-    controllers: [PostagemControler, TemaController],
+    controllers: [PostagemControler],
     exports: [TypeOrmModule]
 })
 

@@ -1,5 +1,8 @@
+import { UnsupportedMediaTypeException } from "@nestjs/common";
 import { IsNotEmpty } from "class-validator";
+import { userInfo } from "os";
 import { Tema } from "src/tema/entities/tema.entity";
+import { User } from "src/user/entities/user.entity";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity({name: 'tb_postagens'})
@@ -23,4 +26,9 @@ export class Postagem {
         onDelete: "CASCADE"
     })
     tema: Tema;
+
+    @ManyToOne(() => User, (user) => user.postagem, { 
+        onDelete: "CASCADE"
+})
+user: User
 }

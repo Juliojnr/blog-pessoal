@@ -7,17 +7,18 @@ import { Postagem } from "../entities/postagem.entity";
 
 @Injectable()
 export class PostagemService {
-    temaService: any
     postagemService: Promise<Postagem>
     constructor (
         @InjectRepository(Postagem)
-        private postagemRepository: Repository<Postagem>
+        private postagemRepository: Repository<Postagem>,
+        private temaService: TemaService
     ) {}
 
     async findAll (): Promise<Postagem[]> {
         return await this.postagemRepository.find({
             relations: {
-                tema: true
+                tema: true,
+                user: true
             }
         })
     }
@@ -29,7 +30,8 @@ export class PostagemService {
                 id
             },
             relations: {
-                tema: true
+                tema: true,
+                user: true
             }
         });
 
@@ -44,7 +46,8 @@ export class PostagemService {
                 titulo: ILike(`%${titulo}%`)
             },
             relations: {
-                tema: true
+                tema: true,
+                user: true
             }
         })
     }
