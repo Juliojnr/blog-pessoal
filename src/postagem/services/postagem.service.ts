@@ -1,7 +1,6 @@
 import { HttpException, Injectable, HttpStatus, ParseIntPipe} from "@nestjs/common";
-import { Body, Get, HttpCode, Param, Put } from "@nestjs/common/decorators";
 import { InjectRepository } from "@nestjs/typeorm";
-import { TemaService } from "src/tema/services/tema.service";
+import { TemaService } from "../../tema/services/tema.service";
 import { DeleteResult, ILike, Repository } from "typeorm";
 import { Postagem } from "../entities/postagem.entity";
 

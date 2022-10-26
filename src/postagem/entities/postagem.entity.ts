@@ -1,8 +1,6 @@
-import { UnsupportedMediaTypeException } from "@nestjs/common";
 import { IsNotEmpty } from "class-validator";
-import { userInfo } from "os";
-import { Tema } from "src/tema/entities/tema.entity";
-import { User } from "src/user/entities/user.entity";
+import { Tema } from "../../tema/entities/tema.entity";
+import { User } from "../../user/entities/user.entity";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity({name: 'tb_postagens'})

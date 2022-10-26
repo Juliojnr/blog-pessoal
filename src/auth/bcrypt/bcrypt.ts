@@ -12,6 +12,6 @@ export class Bcrypt {
     }
 
     async comparePassword (bankPassoword: string, typedPassword: string): Promise<boolean> {
-        return bcrypt.compareSync(bankPassoword, typedPassword);
+        return bcrypt.compareSync(typedPassword, bankPassoword);
     }
 }
