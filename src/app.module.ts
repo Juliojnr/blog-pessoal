@@ -27,7 +27,7 @@ import { UserModule } from './user/user.module';
       logging: false,
       dropSchema: false,
       ssl: {
-        rejectUnauthorized: false,
+        rejectUnauthorized: false
       },
       synchronize: true,
       autoLoadEntities: true,
